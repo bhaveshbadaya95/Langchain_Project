@@ -12,7 +12,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="langchain.chains.llm")
 
 # Process arguments
-parser = argparse.ArgumentParser(description='Atlas Vector Search Demo')
+parser = argparse.ArgumentParser(description='Demo')
 parser.add_argument('-q', '--question', help="The question to ask")
 args = parser.parse_args()
 

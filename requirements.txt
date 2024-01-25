@@ -1,8 +1,10 @@
 argparse
 langchain>=0.0.231
+langchain_openai
 lxml
 pymongo
 requests
 bs4
 openai
 tiktoken
+requests==2.26.0

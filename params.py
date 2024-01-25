@@ -1,4 +1,4 @@
-openai_api_key = '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'
+openai_api_key = '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'
 
 mongodb_conn_string = 'mongodb+srv://searchdb:b9Aj57jBfKxhyvhz@searchdb.jfge7ij.mongodb.net/?retryWrites=true&w=majority'
 db_name = "searchdb"
