@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: langchain-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: langchain
+  template:
+    metadata:
+      labels:
+        app: langchain
+    spec:
+      containers:
+      - name: langchain
+        image: langchain:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: "0.5"  # Limit CPU to 0.5 cores
+            memory: "512Mi"  # Limit memory to 512 MB
+          requests:
+            cpu: "0.25"  # Request 0.25 cores
+            memory: "256Mi"  # Request 256 MB

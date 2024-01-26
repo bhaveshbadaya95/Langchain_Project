@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: langchain-service
+spec:
+  selector:
+    app: langchain  # Selectors should match the labels of your Deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort  # Expose the service using NodePort

@@ -1,16 +1,16 @@
 # https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/mongodb_atlas
 
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.document_loaders import WebBaseLoader
-from langchain.document_loaders import PyPDFLoader
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from pymongo import MongoClient
 import params
 
 # Step 1: Load
 loaders = [
- WebBaseLoader("https://en.wikipedia.org/wiki/Bharti_Airtel"),
+ WebBaseLoader("https://en.wikipedia.org/wiki/Semiconductor"),
  
 ]
 data = []

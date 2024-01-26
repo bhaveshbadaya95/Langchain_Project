@@ -1,7 +1,7 @@
 import argparse
 import params
 from pymongo import MongoClient
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import OpenAI
 from langchain.retrievers import ContextualCompressionRetriever
@@ -11,22 +11,8 @@ import warnings
 # Filter out the UserWarning from langchain
 warnings.filterwarnings("ignore", category=UserWarning, module="langchain.chains.llm")
 
-# Process arguments
-parser = argparse.ArgumentParser(description='Demo')
-parser.add_argument('-q', '--question', help="The question to ask")
-args = parser.parse_args()
 
-if args.question is None:
-    # Some questions to try...
-    
-    #query = "Who started Airtel?"
-    query = "Where is Airtel based?"
-    #query = "Tell me about Bharti Airtel."
-    
-    
-
-else:
-    query = args.question
+query = input("Tell us what you want to ask: ")
 
 print("\nYour question:")
 print("-------------")
@@ -46,8 +32,6 @@ vectorStore = MongoDBAtlasVectorSearch(
 print("---------------")
 docs = vectorStore.max_marginal_relevance_search(query, K=1)
 
-print(docs[0].metadata['title'])
-print(docs[0].page_content)
 
 # Contextual Compression
 llm = OpenAI(openai_api_key=params.openai_api_key, temperature=0)
