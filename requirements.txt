@@ -1,6 +1,8 @@
 argparse
 langchain>=0.0.231
 langchain_openai
+flask
+
 lxml
 pymongo
 requests
